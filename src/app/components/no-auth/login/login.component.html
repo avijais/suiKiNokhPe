@@ -1,0 +1,68 @@
+<section class="outerLayout">
+    <div class="floating-box">
+            <a [routerLink]="['/']" class="loginBtn commonBlueBtn">
+                <i class="material-icons">home</i>
+            </a>
+        </div>
+    <section class="loginContainer">
+        <div class="logo">
+            <a routerLink="/" title="Click here, go to home page">
+                <img src="../assets/images/logo_icon.png" alt="logo">
+            </a>
+        </div>
+        <div class="loginForm">
+            <div class="formHeading">
+                <p class="resendLink">
+                    <a routerLink="/order-cake" href="javascript:void(0);">Order Cake</a>
+                </p>
+                <h3>Let’s Go Cakeforu!</h3>
+                <p>Enter your registered email address to continue</p>
+            </div>
+            <form autocomplete="off">
+                <div class="form-group">
+                    <label class="commonLabel">Email</label>
+                    <input required
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                        type="email"
+                        class="form-control commonInput"
+                        placeholder="Enter your registered email"
+                        autocomplete="off"/>
+                </div>
+                <div class="form-group">
+                    <label class="commonLabel">Password</label>
+                    <div class="showPass">
+                        <input required
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                            type="password"
+                            name="password"
+                            class="form-control commonInput"
+                            placeholder="Password"
+                            autocomplete="off"/>
+                        <span class="eyeIcon">
+                            <i class="material-icons">visibility_off</i>
+                        </span>
+                    </div>
+                </div>
+                <div class="">
+                    <a class="rememberMe">
+                        <input type="checkbox" name="rememberMe" />
+                        <span class="checkboxStyle"></span> <span>Remember me</span>
+                    </a>
+                    <a routerLink="/forgot-password" class="forgotPass">Forgot Password</a>
+                </div>
+                <div class="form-group">
+                    <button type="submit"
+                        class="loginBtn commonBlueBtn">
+                        <span>Login</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <footer class="loginFooter">
+            <ul>
+                <li><a [routerLink]="['/privacy-policy']">Privacy policy</a></li>
+                <li><a [routerLink]="['/terms-of-service']">Terms of Service</a></li>
+            </ul>
+        </footer>
+    </section>
+</section>

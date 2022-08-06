@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/no-auth/login/login.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent, data: { title: 'Cake4u | login' } },
+  { path: '', component: LoginComponent, data: { title: 'Cake4u | login' } },
 ];
 
 @NgModule({
