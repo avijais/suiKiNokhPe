@@ -51,6 +51,11 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  /**
+   * @Description handle submission of form
+   * 
+   * @Author Avinash Jaiswal
+   * */
   onSubmit() {
     console.log('onsubit');
   }
