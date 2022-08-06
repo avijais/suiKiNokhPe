@@ -1,0 +1,26 @@
+.floating-box{
+    position: fixed;
+    top: 20px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        a {
+            transform: translateX(0%);
+        }
+    }
+    a {
+        // transform: translateX(-80%);
+        & , &:hover, &:focus {
+            color: #fff;
+        }
+
+        transition: all ease 0.5s;
+        display: flex;
+        padding: 10px 20px;
+        justify-content: center;
+        align-items: center;
+    }
+}
