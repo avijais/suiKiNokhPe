@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { GlobalConstants } from 'src/app/constants/globalConstants';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +17,8 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
   constructor(
-    public fb: FormBuilder
+    public fb: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -58,6 +61,7 @@ export class LoginComponent implements OnInit {
    * */
   onSubmit() {
     console.log('onsubit');
+    this.router.navigate([GlobalConstants.REDIRECT_URLS.DASHBOARD], {});
   }
 
 }
