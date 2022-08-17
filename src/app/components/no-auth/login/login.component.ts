@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GlobalConstants } from 'src/app/constants/globalConstants';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +20,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     public fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -33,7 +36,8 @@ export class LoginComponent implements OnInit {
    * */
   createLoginForm() {
     this.loginForm = this.fb.group({
-      username: ['', [Validators.required, Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/)]],
+      op: ['login'],
+      email: ['', [Validators.required, Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/)]],
       password: ['', [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/)]]
     })
   }
@@ -62,6 +66,18 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     console.log('onsubit');
     this.router.navigate([GlobalConstants.REDIRECT_URLS.DASHBOARD], {});
+    this.authService.doLogin(this.loginForm.value)
+        .pipe(first())
+        .subscribe(
+            success => {
+              console.log('success : ', success);
+            },
+            err => {
+              console.log('login err : ', err);
+            }, () => {
+              console.log('login next');
+            }
+        )
   }
 
 }

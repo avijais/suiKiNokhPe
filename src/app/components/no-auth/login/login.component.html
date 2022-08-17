@@ -21,9 +21,13 @@
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off">
                 <div class="form-group">
                     <label class="commonLabel">Email</label>
-                    <input required formControlName="username" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-                        type="email" class="form-control commonInput" placeholder="Enter your registered email"
-                        autocomplete="off" />
+                    <input required
+                        formControlName="email"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                        type="text"
+                        class="form-control commonInput"
+                        placeholder="Enter your registered email"
+                        autocomplete="false"/>
                 </div>
                 <div class="form-group">
                     <label class="commonLabel">Password</label>
