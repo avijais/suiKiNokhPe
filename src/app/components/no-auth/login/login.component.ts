@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { GlobalConstants } from 'src/app/constants/globalConstants';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { first } from 'rxjs/operators';
+import { CommonService } from 'src/app/services/common/common.service';
 
 @Component({
   selector: 'app-login',
@@ -22,6 +23,7 @@ export class LoginComponent implements OnInit {
     public fb: FormBuilder,
     private router: Router,
     private authService: AuthService,
+    private commonSer: CommonService
   ) { }
 
   ngOnInit(): void {
@@ -71,6 +73,8 @@ export class LoginComponent implements OnInit {
         .subscribe(
             success => {
               console.log('success : ', success);
+              this.commonSer.getRestoDropDown();
+              this.commonSer.getUserTypeDropDown();
             },
             err => {
               console.log('login err : ', err);
