@@ -13,7 +13,7 @@ export class CommonService {
 
   getRestoDropDown() {
     console.log('get restarurant dropdown');
-    this.apiSer.get(GlobalConstants.API.REST_DROP_DOWN).subscribe(
+    this.apiSer.get(GlobalConstants.API.RESTO_DROP_DOWN).subscribe(
       response => {
         console.log('get resto : ', response);
       }
