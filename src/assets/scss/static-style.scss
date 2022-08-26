@@ -1,0 +1,37 @@
+
+
+@import './abstracts/variables/viewports';
+@import './abstracts/mixins/gradient';
+@import './abstracts/variables/base';
+
+@import './base/base';
+
+@import './base/common';
+
+
+
+
+@import './layout/download-app-banner'; 
+@import './layout/footer'; 
+@import './layout/header'; 
+@import './layout/inner-banner'; 
+@import './layout/nav'; 
+
+
+@import './components/typography';
+@import './components/accordion';
+
+// @import './layout/**/*.scss'; 
+
+@import './pages/_home/about';
+@import './pages/_home/banner';
+@import './pages/_home/our-services';
+
+@import './pages/_about/about-us';
+
+@import './pages/_contact-us/conatct-us';
+
+@import './pages/_how-it-works/how-works';
+@import './pages/_privacy/privacy-policy';
+
+

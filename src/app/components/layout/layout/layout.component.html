@@ -1,0 +1,7 @@
+<section class="mainlayout m-0" [ngClass]="{ 'mainlayoutWidth' : toggleMenu.mainlayoutWidth }">
+    <app-sidebar></app-sidebar>
+    <app-header></app-header>
+    <section class="clientDashbordContent m-0">
+        <router-outlet></router-outlet>
+    </section>
+</section>
