@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ApiConst } from 'src/app/constants/apiConst';
 import { GlobalConstants } from 'src/app/constants/globalConstants';
 import { ApiService } from '../api/api.service';
 
@@ -13,7 +14,7 @@ export class CommonService {
 
   getRestoDropDown() {
     console.log('get restarurant dropdown');
-    this.apiSer.get(GlobalConstants.API.RESTO_DROP_DOWN).subscribe(
+    this.apiSer.get(ApiConst.END_POINT.RESTO_DROP_DOWN).subscribe(
       response => {
         console.log('get resto : ', response);
       }
@@ -22,7 +23,7 @@ export class CommonService {
 
   getUserTypeDropDown() {
     console.log('get restaurant drpdown');
-    this.apiSer.get(GlobalConstants.API.USER_TYPE).subscribe(
+    this.apiSer.get(ApiConst.END_POINT.USER_TYPE).subscribe(
       response => {
         console.log('user type get : ', response);
       }

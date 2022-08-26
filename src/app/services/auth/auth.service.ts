@@ -4,6 +4,7 @@ import { GlobalConstants } from 'src/app/constants/globalConstants';
 import { map } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
+import { ApiConst } from 'src/app/constants/apiConst';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +26,7 @@ export class AuthService {
 
   doLogin(formData) {
     console.log('dologin : ', formData);
-    let url = `${GlobalConstants.API_URL}${GlobalConstants.API.LOGIN}`;
+    let url = `${GlobalConstants.API_URL}${ApiConst.END_POINT.LOGIN}`;
     return this.http.post<any>(url, formData)
       .pipe(
           map(
