@@ -1,0 +1,96 @@
+.contact-us {
+  &__heading {
+      margin-bottom: 20px;
+      font-size: 30px;
+      @media (min-width:$breakpoints-md) {
+        font-size: 40px;
+        margin-bottom: 40px;
+      }
+  }
+  &__sub-heading {
+    font-size: 24px;
+
+  }
+
+  &__description {
+      line-height: 30px;
+  }
+  
+  &__thumb {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    margin-bottom:20px;
+    min-height: 200px;
+    padding: 20px;
+    @media (min-width:$breakpoints-md) {
+        margin: 0 10px 20px;
+        &:first-child{ margin-left: 0;}
+        &:last-child{ margin-right: 0;}
+    }
+    
+    &-icon {
+      margin-bottom: 10px;
+    }
+    &-title {
+      margin-bottom: 10px;
+    }
+    &-detail {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  }
+}
+
+.form {
+  &__heading {
+    text-align: center;
+    margin-bottom: 30px;
+    @media (min-width:$breakpoints-md) {
+        margin-bottom: 40px;
+    }
+    font-size: 32px;
+    
+  }
+  .form-group{
+    margin-bottom: 10px;
+  }
+  &--required{
+    color: $danger-color;
+  }
+  &__sub-heading{
+      margin: 20px 0;
+      font-size: 20px;
+      small{
+          display: block;
+          width: 100%;
+          margin-top: 5px;
+      }
+  }
+  &__label {
+    margin-bottom: 5px;
+  }
+  &__input {
+    border-radius: 0;
+    // padding: 20px 15px;
+  }
+  &__submit {
+    @include gradient-bg;
+    border-radius: 0;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    &:hover, &:focus {
+        color: #fff;
+    }
+
+  &[disabled]{
+    // opacity: 1;
+    background:$theemColorBlue;
+  }
+    
+  }
+}
+
