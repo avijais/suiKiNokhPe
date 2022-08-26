@@ -1,7 +1,7 @@
 'use strict';
 
 export class GlobalConstants {
-    public static API_URL = 'https://api.TEST.com/api/v1.0/';
+    public static API_URL = 'https://api.test.com/api/v1.0/';
     public static DATA = 'data';
     public static STATUS_CODE = 'status_code';
     public static TOKEN = 'token';

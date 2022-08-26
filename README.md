@@ -1,4 +1,4 @@
-# Ng10TwoThree
+# CopyInHand
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.3.
 
@@ -27,5 +27,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## Add Bootstrap
+
 Run command `npm install ngx-bootstrap bootstrap --save`
 Add in styles array `"../node_modules/bootstrap/dist/css/bootstrap.min.css"`
