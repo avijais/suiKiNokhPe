@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ApiConst } from 'src/app/constants/apiConst';
-import { GlobalConstants } from 'src/app/constants/globalConstants';
 import { ApiService } from '../api/api.service';
 
 @Injectable({
