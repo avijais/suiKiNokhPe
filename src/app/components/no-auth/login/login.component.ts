@@ -22,12 +22,15 @@ export class LoginComponent implements OnInit {
   constructor(
     public fb: FormBuilder,
     private router: Router,
-    private authService: AuthService,
+    private authSer: AuthService,
     private commonSer: CommonService
   ) { }
 
   ngOnInit(): void {
-    this.createLoginForm();
+    if (this.authSer.currentUserValue)
+      this.router.navigate([GlobalConstants.REDIRECT_URLS.DASHBOARD], {})
+    else
+      this.createLoginForm();
   }
 
   /**
@@ -68,7 +71,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     console.log('onsubit');
     this.router.navigate([GlobalConstants.REDIRECT_URLS.DASHBOARD], {});
-    this.authService.doLogin(this.loginForm.value)
+    this.authSer.doLogin(this.loginForm.value)
         .pipe(first())
         .subscribe(
             success => {
