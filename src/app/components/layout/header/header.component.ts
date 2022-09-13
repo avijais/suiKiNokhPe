@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GlobalConstants } from 'src/app/constants/globalConstants';
+// import { GlobalConstants } from 'src/app/constants/globalConstants';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { ToggleMenuService } from 'src/app/services/toggle-menu/toggle-menu.service';
 
 @Component({
@@ -9,15 +10,16 @@ import { ToggleMenuService } from 'src/app/services/toggle-menu/toggle-menu.serv
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public toggleMenu : ToggleMenuService) { }
+  constructor(
+    public toggleMenu : ToggleMenuService,
+    public authSer: AuthService
+  ) { }
 
   ngOnInit(): void {
   }
 
-  
-
-  get redirects() {
-    return GlobalConstants.REDIRECT_URLS;
-  }
+  // get redirects() {
+  //   return GlobalConstants.REDIRECT_URLS;
+  // }
 
 }
