@@ -6,12 +6,15 @@ import { LayoutComponent } from './components/layout/layout/layout.component';
 import { LoginComponent } from './components/no-auth/login/login.component';
 import { UserListComponent } from './components/user/user-list/user-list.component';
 import { UserTypeComponent } from './components/user/user-type/user-type.component';
+import { AuthGuard } from './guards/auth/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent, data: { title: 'Cakeforu | login' } },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent, data: { title: 'MyNotes | login' } },
   {
     path: '',
     component: LayoutComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: 'dashboard', component: DashboardComponent, data: { title: 'MyNotes | Dashboard'} },
       { path: 'user', component: UserListComponent, data: { title: 'MyNotes | Users'} },
@@ -19,7 +22,8 @@ const routes: Routes = [
       { path: 'user/type', component: UserTypeComponent, data: { title: 'MyNotes | User Type' } },
       { path: 'expenses', component: ExpensesComponent, data: { title: 'MyNotes | Expenses' } }
     ]
-  }
+  },
+  { path: '**', redirectTo: '/login' }
 ];
 
 @NgModule({
